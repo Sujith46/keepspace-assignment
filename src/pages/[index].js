@@ -60,6 +60,12 @@ export default function DetailedContactView({ contactId }) {
     }
   };
 
+  const updateContact = (arr, id, updatedData) => {
+    return arr.map((item) =>
+      item.id === id ? { ...item, ...updatedData } : item
+    );
+  };
+
   const handleFormInputSumbit = () => {
     const isValidEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
@@ -71,7 +77,7 @@ export default function DetailedContactView({ contactId }) {
       setError("Email should be in correct format");
     } else {
       setError("");
-      const newContactData = [...contact, formData];
+      const newContactData = updateContact(contact, contactId, formData);
       dispatch(addContact(newContactData));
       showToast(true);
       setTimeout(() => {
