@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import ContactLogo from "../../assets/images/icons/contactLogo.png";
+import ContactLogo from "../../assets/images/icons/contactlogo.png";
 
 const NavBar = () => {
   return (
