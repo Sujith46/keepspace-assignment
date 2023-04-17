@@ -75,7 +75,7 @@ export default function AddContact() {
   return (
     <Layout>
       <div className="p-12 ">
-        <div className="header mb-4">
+        <div className="header mb-8">
           <h2 className="text-3xl font-bold mb-1">
             <span>✏️</span> New Contact
           </h2>
@@ -84,7 +84,7 @@ export default function AddContact() {
           </p>
         </div>
         <div className="add-contact-form mb-8">
-          <div className="row-one grid grid-cols-3 gap-8 mb-8">
+          <div className="row-one grid grid-cols-2 gap-8 mb-8">
             <TextInput
               label="Name *"
               name="name"
@@ -97,7 +97,7 @@ export default function AddContact() {
               onChange={handleInputChange}
             />
           </div>
-          <div className="row-one grid grid-cols-3 gap-8 mb-8">
+          <div className="row-one grid grid-cols-2 gap-8 mb-8">
             <TextInput
               label="Phone number"
               name="phone"
@@ -109,7 +109,7 @@ export default function AddContact() {
               onChange={handleInputChange}
             />
           </div>
-          <div className="row-one grid grid-cols-3 gap-8 mb-8">
+          <div className="row-one grid grid-cols-2 gap-8 mb-8">
             <TextInput
               label="Date of birth"
               type="date"
@@ -117,7 +117,7 @@ export default function AddContact() {
               onChange={handleInputChange}
             />
           </div>
-          <div className="row-one w-32">
+          <div className="row-one items-center w-32 flex gap-10">
             <RadioBtn
               label="Male"
               name="gender"
@@ -132,14 +132,14 @@ export default function AddContact() {
             />
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-end gap-4">
+          {error ? <div className="error text-red-500">{error}</div> : ""}
           <button
             className="btn btn-secondary"
             onClick={() => handleFormInputSumbit()}
           >
             <span className="mr-2">👍🏼</span>Add Contact
           </button>
-          {error ? <div className="error text-red-500">{error}</div> : ""}
         </div>
       </div>
       {toast ? <Toast message="🥳 Contact successfully saved!" /> : null}

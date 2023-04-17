@@ -105,7 +105,7 @@ export default function DetailedContactView({ contactId }) {
   return (
     <Layout>
       <div className="p-12 ">
-        <div className="header mb-4 flex items-center justify-between">
+        <div className="header mb-8 flex items-center justify-between">
           <div>
             <h2 className="text-3xl font-bold mb-1">
               <span>🛠</span> Update Contact
@@ -119,7 +119,7 @@ export default function DetailedContactView({ contactId }) {
           </label>
         </div>
         <div className="add-contact-form mb-8">
-          <div className="row-one grid grid-cols-3 gap-8 mb-8">
+          <div className="row-one grid grid-cols-2 gap-8 mb-8">
             <TextInput
               label="Name *"
               name="name"
@@ -134,7 +134,7 @@ export default function DetailedContactView({ contactId }) {
               onChange={handleInputChange}
             />
           </div>
-          <div className="row-one grid grid-cols-3 gap-8 mb-8">
+          <div className="row-one grid grid-cols-2 gap-8 mb-8">
             <TextInput
               label="Phone number"
               name="phone"
@@ -148,7 +148,7 @@ export default function DetailedContactView({ contactId }) {
               onChange={handleInputChange}
             />
           </div>
-          <div className="row-one grid grid-cols-3 gap-8 mb-8">
+          <div className="row-one grid grid-cols-2 gap-8 mb-8">
             <TextInput
               label="Date of birth"
               type="date"
@@ -157,7 +157,7 @@ export default function DetailedContactView({ contactId }) {
               onChange={handleInputChange}
             />
           </div>
-          <div className="row-one w-32">
+          <div className="row-one flex gap-10 items-center w-32">
             <RadioBtn
               label="Male"
               name="gender"
@@ -172,14 +172,14 @@ export default function DetailedContactView({ contactId }) {
             />
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-end gap-4">
+          {error ? <div className="error text-red-500">{error}</div> : ""}
           <button
             className="btn btn-primary"
             onClick={() => handleFormInputSumbit()}
           >
             <span className="mr-2">📤</span>Update Contact
           </button>
-          {error ? <div className="error text-red-500">{error}</div> : ""}
         </div>
       </div>
       <Modal onDelete={handleDeleteContact} />

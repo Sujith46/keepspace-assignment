@@ -2,7 +2,7 @@ const RadioBtn = ({ label, checked, name, onChange, defaultValue }) => {
   return (
     <div className="form-control">
       <label className="label cursor-pointer">
-        <span className="label-text">{label}</span>
+        <span className="label-text mr-2">{label}</span>
         <input
           type="radio"
           name="radio-10"
